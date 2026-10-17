@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的音乐</title>
+
+    <style>
+        body{
+            background-color: white;
+        }
+
+        .recommend-hd{
+            width: 1000PX;
+            padding-top: 20px;
+            margin: 0 auto;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+        }
+        
+
+        /*3.7 我的喜欢 布局 */
+    
+        .container3_7 {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 标签栏样式 */
+        .tab-nav {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+   
+        .tab-nav li {
+
+            list-style: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .tab-nav li.active {
+            background-color: red;
+        }
+        
+        .tab-nav li:hover {
+            background-color: #66cde6;
+    
+        }
+
+    /* 操作按钮栏样式 */
+    .action-bar {
+        width: 400px;
+        display: flex;
+        margin-left: 840px;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .action-btn {
+        padding: 6px 12px;
+        background-color: red;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        color: white;
+
+    }
+    
+    .action-btn:hover {
+        background-color: #66cde6;
+    }
+
+
+    /* 歌曲列表表头 */
+    .song-table-header {
+      display: flex;
+      margin: auto;
+      background-color: red;
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .song-table-header div {
+      flex: 1;
+      text-align: left;
+    }
+
+    /* 歌曲列表项样式 */
+    .song-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .song-list :hover{
+        background-color: lightskyblue;
+    }
+
+    .song-iteml {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .song-iteml:hover {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .song-iteml div {
+      flex: 1;
+    }
+
+    .song-cover {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+
+
+        /* 底部播放控制栏样式 */
+    .player-footer {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 90%;
+      max-width: 1200px;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 2px;
+        }
+    .player-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .player-cover {
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+    }
+
+    .player-controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .player-controls button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .player-controls button:hover {
+      color: #66cde6;
+    }
+
+    .player-progress {
+      flex: 1;
+      margin: 0 10px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background-color: #e6e6e6;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 4px;
+      background-color: #66cde6;
+      border-radius: 2px;
+    }
+
+    .player-time {
+      display: flex;
+      gap: 5px;
+    }
+
+    .comment{
+      display: flex;
+      margin: auto;
+    }
+
+    </style>
+</head>
+<body>
+  
+  <div class="container3_7">
+    <!-- 页面标题 -->
+     <div class="recommend-hd">
+      <h1>我的喜欢</h1>  
+    </div>
+    
+    <!-- 标签导航栏 -->
+     
+    <ul class="tab-nav">
+      <li class="active">歌曲520</li>
+      <li class="active">歌单15</li>
+      <li class="active">专辑1</li>
+      <li class="active">有声节目0</li>
+      <li class="active">视频2</li>
+    </ul>
+    
+    <!-- 操作栏 -->
+     <div class="action-bar">
+      <button class="action-btn">最近收藏</button>
+      <button class="action-btn">播放最多</button>
+      <button class="action-btn">批量下载</button>
+    </div>
+    
+    
+    <!-- 歌曲列表区域 -->
+     <div class="song-table-header">
+      <div>歌名/歌手</div>
+      <div>专辑</div>
+      <div>时长</div>
+    </div>
+    
+    <div class="song-list">
+      <div class="song-iteml">
+        <img src="image/Anson walk2.jpg" alt="封面" class="song-cover">
+        <div>Walked Through Hell<br> Anson Seabra</div>
+        <div>Walked Through Hell</div>
+        <div>03:24</div>
+        <button class="play-btn">▶</button>
+      </div>
+
+      <div class="song-iteml">
+        <img src="image/exile.webp" alt="封面" class="song-cover">
+        <div>exile<br> Taylor <Swift>
+          <Bonlver></Bonlver></div>
+          <div>folklore(deluxe version)</div>
+          <div>04:45</div>
+          <button class="play-btn">▶</button>
+        </div>
+        
+        <div class="song-iteml">
+          <img src="image/不败的英雄.webp" alt="封面" class="song-cover">
+          <div>不败的英雄 <br>唐俊迪 </div>
+          <div>不败的英雄（铠甲勇士）</div>
+          <div>02:06</div>
+          <button class="play-btn">▶</button>
+        </div>
+        
+        <div class="song-iteml">
+          <img src="image/像你这样的朋友.jpg" alt="封面" class="song-cover">
+          <div>像你这样的朋友 <br>陆虎 </div>
+          <div>像你这样的朋友</div>
+          <div>04:05</div>
+          <button class="play-btn">▶</button>
+        </div>
+
+        <div class="song-iteml">
+          <img src="image/倦鸟.png" alt="封面" class="song-cover">
+          <div>倦鸟 <br>陆虎 </div>
+          <div>倦鸟</div>
+          <div>03:00</div>
+          <button class="play-btn">▶</button>
+        </div>
+        
+        <div class="song-iteml">
+          <img src="image/消散对白.webp" alt="封面" class="song-cover">
+          <div>消散对白 <br>丁禹兮 </div>
+          <div>消散对白</div>
+          <div>03:31</div>
+          <button class="play-btn">▶</button>
+        </div>
+        
+        <div class="song-iteml">
+          <img src="image/凝眸.jpg" alt="封面" class="song-cover">
+          <div>凝眸 <br>丁禹兮 </div>
+          <div>永夜星河 影视原声大碟</div>
+          <div>03:40</div>
+          <button class="play-btn">▶</button>
+        </div>
+        
+        <div class="song-iteml">
+          <img src="image/那些年.webp" alt="封面" class="song-cover">
+          <div>那些年 <br>胡夏 </div>
+          <div>燃点 </div>
+          <div>06:09</div>
+          <button class="play-btn">▶</button>
+        </div>
+        
+        <div class="song-iteml">
+          <img src="image/泡沫.webp" alt="封面" class="song-cover">
+          <div>泡沫 <br>邓紫棋 </div>
+          <div>泡沫 </div>
+          <div>03:09</div>
+          <button class="play-btn">▶</button>
+        </div>
+        
+        <div class="song-iteml">
+          <img src="image/xzq.jpg" alt="封面" class="song-cover">
+          <div>动物世界 <br>薛之谦 </div>
+          <div>动物世界 </div>
+          <div>04:21</div>
+          <button class="play-btn">▶</button>
+        </div>
+      
+      </div>
+      
+      
+      <!-- 底部播放控制栏 -->
+       <div class="player-footer">
+        <div class="player-info">
+          <img src="image/像你这样的朋友.jpg" alt="当前播放封面" class="player-cover">
+          <p>像你这样的朋友</p>
+          <p>陆虎</p> 
+        </div>
+        
+        <div class="player-controls">
+          <div class="controls">
+            <button class="prev-btn">⏮</button>
+            <button class="play-btn">▶</button>
+            <button class="next-btn">⏭</button>
+          </div>
+          
+          <div class="player-time">
+            <span class="current-time">00:00</span> / <span class="duration">04:05</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div> 
+    
+  </body>
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

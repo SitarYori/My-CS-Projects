@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f5f6fa;
+            --success-color: #00b894;
+            --error-color: #d63031;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .auth-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .tabs {
+            display: flex;
+            background-color: var(--light-color);
+        }
+        
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .tab.active {
+            color: var(--primary-color);
+            background-color: white;
+        }
+        
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .form-container {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+        }
+        
+        .input-icon {
+            position: absolute;
+            right: 15px;
+            top: 40px;
+            color: #999;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #5649d1;
+        }
+        
+        .social-signup {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .social-signup p {
+            color: #666;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .social-signup p::before,
+        .social-signup p::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 30%;
+            background-color: #ddd;
+            top: 50%;
+        }
+        
+        .social-signup p::before {
+            left: 0;
+        }
+        
+        .social-signup p::after {
+            right: 0;
+        }
+        
+        .other-signup {
+            margin-left: 30px;
+            display: flex;
+            justify-content: left;
+            margin-top: 15px;
+        }
+        
+        .other-signup img {
+            width: 20px;
+            height: 20px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        .icon-text {
+            margin-left: 5px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .icon-text:hover {
+            color: red;
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+        
+        .form-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .form-content {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* 自定义弹窗样式 */
+        .custom-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: popupFadeIn 0.3s ease-out;
+        }
+        
+        .popup-icon {
+            font-size: 50px;
+            color: var(--success-color);
+            margin-bottom: 20px;
+        }
+        
+        .popup-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .popup-message {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        
+        .popup-close {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .popup-close:hover {
+            background-color: #5649d1;
+        }
+        
+        /*实现了注册成功后弹窗从上方淡入的效果。*/
+        @keyframes popupFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="tabs">
+            <div class="tab active" id="signup-tab">注册</div>
+        </div>
+        
+        <div class="form-container">
+            <!-- 注册表单 -->
+            <div class="form-content" id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">用户名</label>
+                    <input type="text" id="signup-name" class="form-control" placeholder="请设置您的用户名">
+                    <i class="fas fa-user input-icon"></i>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-password">密码</label>
+                    <input type="password" id="signup-password" class="form-control" placeholder="请设置您的密码(至少8位)">
+                    <i class="fas fa-lock input-icon"></i>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-confirm-password">确认密码</label>
+                    <input type="password" id="signup-confirm-password" class="form-control" placeholder="请再次输入密码">
+                    <i class="fas fa-lock input-icon"></i>
+                </div>         
+                
+                <button class="btn btn-primary" id="signup-btn">注册</button>
+                
+                <div class="social-signup">
+                    <p>或使用以下方式注册</p>
+                    <div class="other-signup">
+                        <img src="image/微博.webp" alt="" title="微博注册">
+                        <span class="icon-text">微博注册</span>
+                        <img src="image/vx.jpg" alt="" title="微信注册">
+                        <span class="icon-text">微信注册</span>
+                        <img src="image/QQ.webp" alt="" title="QQ注册">
+                        <span class="icon-text">QQ注册</span>
+                    </div>
+                </div>
+                
+                <div class="form-footer">
+                    已有账号? <a href="login.html">立即登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自定义弹窗 -->
+    <div class="custom-popup" id="success-popup">
+        <div class="popup-content">
+            <div class="popup-icon">✓</div>
+            <h3 class="popup-title">注册成功</h3>
+            <p class="popup-message">您已成功注册新用户，即将跳转到页面...</p>
+            <button class="popup-close" id="popup-close">确定</button>
+        </div>
+    </div>
+    
+   <script>
+    // 获取注册按钮
+    const signupBtn = document.getElementById('signup-btn');
+    // 获取弹窗元素
+    const successPopup = document.getElementById('success-popup');
+    // 获取关闭按钮
+    const popupClose = document.getElementById('popup-close');
+    
+    // 注册按钮点击事件
+    signupBtn.addEventListener('click', function() {
+        // 表单验证
+        const username = document.getElementById('signup-name').value;
+        const password = document.getElementById('signup-password').value;
+        const confirmPassword = document.getElementById('signup-confirm-password').value;
+        
+        if(!username) {
+            alert('请输入用户名！');
+            return;
+        }
+        
+        if(!password) {
+            alert('请输入密码！');
+            return;
+        }
+        
+        if(password.length < 8) {
+            alert('密码长度至少为8位！');
+            return;
+        }
+        
+        if(password !== confirmPassword) {
+            alert('两次输入的密码不一致！');
+            return;
+        }
+        
+        // 显示成功弹窗
+        successPopup.style.display = 'flex';
+        
+        // 3秒后自动跳转到登录页面
+        setTimeout(function() {
+            window.location.href = 'login.html'; // 跳转到登录页面
+        }, 3000);
+    });
+    
+    // 关闭弹窗并跳转到登录页面
+    popupClose.addEventListener('click', function() {
+        successPopup.style.display = 'none';
+        window.location.href = 'login.html'; // 立即跳转到登录页面
+    });
+    
+    // 点击弹窗外部关闭并跳转到登录页面
+    window.addEventListener('click', function(event) {
+        if(event.target === successPopup) {
+            successPopup.style.display = 'none';
+            window.location.href = 'login.html'; // 立即跳转到登录页面
+        }
+    });
+</script>
+</body>
+</html>
