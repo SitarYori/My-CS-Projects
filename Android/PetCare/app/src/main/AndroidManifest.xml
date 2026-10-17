@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.itcast.petcare">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:targetApi="31">
+
+        <!-- ⭐ LoginActivity 是启动页 -->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 注册页 -->
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:exported="false" />
+
+        <!-- 主页（登录成功后跳转） -->
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false" />
+
+        <!-- 商品详情页 -->
+        <activity
+            android:name=".activity.ProductDetailActivity"
+            android:exported="false" />
+
+        <!-- 确认订单 -->
+        <activity
+            android:name=".activity.CheckoutActivity"
+            android:exported="false" />
+
+        <!-- 支付 -->
+        <activity
+            android:name=".activity.PaymentActivity"
+            android:exported="false" />
+
+        <!-- 地址列表 -->
+        <activity
+            android:name=".activity.AddressListActivity"
+            android:exported="false" />
+
+        <!-- 地址编辑 -->
+        <activity
+            android:name=".activity.AddressEditActivity"
+            android:exported="false" />
+
+        <!-- 订单详情 -->
+        <activity
+            android:name=".activity.OrderDetailActivity"
+            android:exported="false" />
+
+        <!-- 订单列表 -->
+        <activity
+            android:name=".activity.OrderListActivity"
+            android:exported="false" />
+
+        <!-- ⭐ 我的预约（新增） -->
+        <activity
+            android:name=".activity.MyBookingActivity"
+            android:exported="false" />
+
+        <!-- 服务预约 -->
+        <activity
+            android:name=".activity.ServiceBookingActivity"
+            android:exported="false" />
+
+        <!-- 充值中心 -->
+        <activity
+            android:name=".activity.RechargeActivity"
+            android:exported="false" />
+
+        <!-- 我的会员 -->
+        <activity
+            android:name=".activity.MemberCenterActivity"
+            android:exported="false" />
+
+        <!-- 权益卡 -->
+        <activity
+            android:name=".activity.EquityCardActivity"
+            android:exported="false" />
+
+        <!-- 优惠卷 -->
+        <activity
+            android:name=".activity.MyCouponActivity"
+            android:exported="false" />
+
+        <!-- 评价 -->
+        <activity
+            android:name=".activity.OrderCommentActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

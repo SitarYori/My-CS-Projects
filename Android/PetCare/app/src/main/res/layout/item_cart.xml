@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#FFFFFF"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+    <!-- 商品图片 -->
+    <ImageView
+        android:id="@+id/iv_product_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/banner1"
+        android:scaleType="centerCrop"
+        android:background="#F5F6FA" />
+
+    <!-- 商品信息 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp">
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="鲜朗烘焙全期全价猫粮2kg"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tv_product_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="61%鲜鸡肉+20%鲜骨鸡肉"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥168"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FF6B35" />
+
+            <TextView
+                android:id="@+id/tv_original_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥199"
+                android:textSize="11sp"
+                android:textColor="#CCCCCC"
+                android:layout_marginStart="6dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 数量控制 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- 减号 -->
+            <TextView
+                android:id="@+id/btn_decrease"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:text="-"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:gravity="center"
+                android:background="@drawable/bg_quantity_btn"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- 数量 -->
+            <TextView
+                android:id="@+id/tv_quantity"
+                android:layout_width="36dp"
+                android:layout_height="28dp"
+                android:text="1"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:gravity="center" />
+
+            <!-- 加号 -->
+            <TextView
+                android:id="@+id/btn_increase"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:text="+"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:gravity="center"
+                android:background="@drawable/bg_quantity_btn"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+        <!-- 删除按钮 -->
+        <TextView
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除"
+            android:textSize="11sp"
+            android:textColor="#FF3B30"
+            android:layout_marginTop="4dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</LinearLayout>

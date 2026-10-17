@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_cart_float"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_cart_float"
+        android:gravity="center"
+        android:elevation="8dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_cart"
+            app:tint="#FFFFFF" />  <!-- ← 改为 app:tint -->
+
+    </LinearLayout>
+
+    <!-- 数量角标 -->
+    <TextView
+        android:id="@+id/tv_float_cart_count"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="0"
+        android:textSize="10sp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:background="@drawable/bg_cart_badge"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="2dp"
+        android:visibility="gone" />
+
+</FrameLayout>

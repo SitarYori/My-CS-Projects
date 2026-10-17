@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 原有布局 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F5F6FA">
+
+        <!-- 顶部门店信息 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="圈小喵宠物生活馆"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A2E" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 门店距您"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1433.268km"
+                    android:textSize="12sp"
+                    android:textColor="#4A90D9"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📢 "
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="门店公告：20:00后不再接待洗护美容！注册小程序..."
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+            </LinearLayout>
+
+            <!-- 自提/店内/更多 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自提"
+                    android:textSize="12sp"
+                    android:textColor="#4A90D9"
+                    android:background="@drawable/bg_tab_selected"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="店内"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:background="@drawable/bg_tab_normal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:layout_marginStart="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="更多"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:background="@drawable/bg_tab_normal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 主体：左侧分类导航 + 右侧商品列表 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- 左侧分类导航 -->
+            <LinearLayout
+                android:id="@+id/ll_category"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:id="@+id/tv_tab_signature"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="🏆 招牌"
+                    android:textSize="13sp"
+                    android:textColor="#4A90D9"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:background="@drawable/bg_category_selected" />
+
+                <TextView
+                    android:id="@+id/tv_tab_cat_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="😺 猫粮"
+                    android:textSize="13sp"
+                    android:textColor="#666666"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:background="@drawable/bg_category_normal"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/tv_tab_dog_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="🐶 狗粮"
+                    android:textSize="13sp"
+                    android:textColor="#666666"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:background="@drawable/bg_category_normal"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/tv_tab_cat_snack"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="🐱 猫零食"
+                    android:textSize="13sp"
+                    android:textColor="#666666"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:background="@drawable/bg_category_normal"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/tv_tab_dog_snack"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="🐕 狗零食"
+                    android:textSize="13sp"
+                    android:textColor="#666666"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:background="@drawable/bg_category_normal"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/tv_tab_featured"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="✨ 精选"
+                    android:textSize="13sp"
+                    android:textColor="#666666"
+                    android:gravity="center|start"
+                    android:paddingStart="12dp"
+                    android:background="@drawable/bg_category_normal"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- 分割线 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#EEEEEE" />
+
+            <!-- 右侧商品列表 -->
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F5F6FA">
+
+                <LinearLayout
+                    android:id="@+id/ll_product_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="80dp">
+
+                    <TextView
+                        android:id="@+id/tv_category_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🏆 招牌"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:layout_marginBottom="12dp" />
+
+                    <GridLayout
+                        android:id="@+id/gl_products"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:horizontalSpacing="10dp"
+                        android:verticalSpacing="12dp">
+                    </GridLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ⭐ 购物车悬浮按钮 -->
+    <include
+        android:id="@+id/fl_cart_float"
+        layout="@layout/layout_cart_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="20dp" />
+
+</FrameLayout>
