@@ -1,0 +1,31 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/MainPage",
+    "pages/PlanPage",
+    "pages/DiscoverPage",
+    "pages/ProfilePage",
+    "pages/PostDetailPage",
+    "pages/CommunityPage",
+    "pages/MedalPage",
+    "pages/RacePage",
+    "pages/fullpicture",
+    "pages/ShopPage",
+    "pages/CheckoutPage",
+    "pages/GoodsDetailPage",
+    "pages/CartPage",
+    "pages/NewPage",
+    "pages/MorePage",
+    "pages/MinePage",
+    "pages/CoursePage",
+    "pages/RecordPage",
+    "pages/FollowFansPage",
+    "pages/SettingPage",
+    "pages/FeedbackPage",
+    "pages/AboutPage",
+    "pages/SearchPage",
+    "pages/UserPersonalPage",
+    "pages/MoreCourse",
+    "pages/PersonalInformation"
+  ]
+}

@@ -1,2 +1,12 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.40.33807:TargetPlatformVersion=10.0.22621.0:
 Debug|x64|D:\桂林航天工业学院\桂林航天工业学院\23级计科1班\C(C++\陈莉莉0129演讲比赛流程管理系统\|
+=======
+PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.40.33807:TargetPlatformVersion=10.0.22621.0:
+Debug|x64|D:\桂林航天工业学院\桂林航天工业学院\23级计科1班\C(C++\陈莉莉0129演讲比赛流程管理系统\|
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e
+=======
+PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.40.33807:TargetPlatformVersion=10.0.22621.0:
+Debug|x64|D:\桂林航天工业学院\桂林航天工业学院\23级计科1班\C(C++\陈莉莉0129演讲比赛流程管理系统\|
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e

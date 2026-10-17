@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 body {
   font-family: Arial, sans-serif;
@@ -36,3 +37,43 @@ textarea {
   width: 100%;
   height: 60px;
 }
+=======
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7f7f7;
+}
+header {
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+section {
+  padding: 20px;
+}
+.song-card {
+  display: inline-block;
+  width: 200px;
+  margin: 10px;
+}
+.Login-container {
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+  background: white;
+  box-shadow: 0 0 10px #ccc;
+  margin-top: 50px;
+}
+textarea {
+  width: 100%;
+  height: 60px;
+}
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e

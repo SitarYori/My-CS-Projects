@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
@@ -29,3 +31,69 @@ Global
 		SolutionGuid = {2D0023B6-FB6E-4906-90E5-6DCFCBB7D29F}
 	EndGlobalSection
 EndGlobal
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "演讲比赛", "演讲比赛\演讲比赛.vcxproj", "{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Debug|x64.ActiveCfg = Debug|x64
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Debug|x64.Build.0 = Debug|x64
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Debug|x86.ActiveCfg = Debug|Win32
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Debug|x86.Build.0 = Debug|Win32
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Release|x64.ActiveCfg = Release|x64
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Release|x64.Build.0 = Release|x64
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Release|x86.ActiveCfg = Release|Win32
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D0023B6-FB6E-4906-90E5-6DCFCBB7D29F}
+	EndGlobalSection
+EndGlobal
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "演讲比赛", "演讲比赛\演讲比赛.vcxproj", "{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Debug|x64.ActiveCfg = Debug|x64
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Debug|x64.Build.0 = Debug|x64
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Debug|x86.ActiveCfg = Debug|Win32
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Debug|x86.Build.0 = Debug|Win32
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Release|x64.ActiveCfg = Release|x64
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Release|x64.Build.0 = Release|x64
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Release|x86.ActiveCfg = Release|Win32
+		{18820F1C-7B5F-4533-A8E9-B7B6693C12ED}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D0023B6-FB6E-4906-90E5-6DCFCBB7D29F}
+	EndGlobalSection
+EndGlobal
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e

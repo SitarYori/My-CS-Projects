@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
   <ProjectOutputs>
@@ -8,4 +10,28 @@
   <ContentFiles />
   <SatelliteDlls />
   <NonRecipeFileRefs />
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\桂林航天工业学院\桂林航天工业学院\23级计科1班\C(C++\陈莉莉0129演讲比赛流程管理系统\x64\Debug\演讲比赛.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\桂林航天工业学院\桂林航天工业学院\23级计科1班\C(C++\陈莉莉0129演讲比赛流程管理系统\x64\Debug\演讲比赛.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e
 </Project>

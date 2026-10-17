@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -497,4 +498,505 @@ phoneLoginBtn.addEventListener('click', function() {
     });
 </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f5f6fa;
+            --success-color: #00b894;
+            --error-color: #d63031;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+                
+        .auth-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .tabs {
+            display: flex;
+            background-color: var(--light-color);
+        }
+        
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .tab.active {
+            color: var(--primary-color);
+            background-color: white;
+        }
+        
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .form-container {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+        }
+        
+        .input-icon {
+            position: absolute;
+            right: 15px;
+            top: 40px;
+            color: #999;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #5649d1;
+        }
+        
+        .social-login {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .social-login p {
+            color: #666;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .social-login p::before,
+        .social-login p::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 30%;
+            background-color: #ddd;
+            top: 50%;
+        }
+        
+        .social-login p::before {
+            left: 0;
+        }
+        
+        .social-login p::after {
+            right: 0;
+        }
+
+        .other-login {
+          margin-left: 30px;
+          display: flex;
+          justify-content: left;
+          margin-top: 15px;
+        }
+        .other-login img {
+          width: 20px;
+          height: 20px;
+          margin: 0 10px;
+          vertical-align: middle;
+        }
+
+        .icon-text{
+          margin-left: 5px;
+          color: #666;
+          font-size: 14px;
+        }
+        .icon-text:hover{
+          color: red;
+        }
+        
+        .forgot-password {
+            text-align: right;
+            margin-top: -15px;
+            margin-bottom: 20px;
+        }
+        
+        .forgot-password a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .forgot-password a:hover {
+            color: var(--primary-color);
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+        
+        .form-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .form-content {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* 自定义弹窗样式 */
+        .custom-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: popupFadeIn 0.3s ease-out;
+        }
+        
+        .popup-icon {
+            font-size: 50px;
+            color: var(--success-color);
+            margin-bottom: 20px;
+        }
+        
+        .popup-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .popup-message {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        
+        .popup-close {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .popup-close:hover {
+            background-color: #5649d1;
+        }
+        
+        /*实现了弹窗从上方淡入的效果*/
+        @keyframes popupFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="tabs">
+            <div class="tab active" id="login-tab">登录</div>
+        </div>
+        
+        <div class="form-container">
+            <!-- 登录表单 -->
+            <div class="form-content" id="login-form">
+                <div class="form-group">
+                    <label for="login-name">用户名称</label>
+                    <input type="name" id="login-name" class="form-control" placeholder="请输入您的用户名/手机号">
+                    <i class="fas fa-envelope input-icon"></i>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">密码</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="请输入您的密码">
+                    <i class="fas fa-lock input-icon"></i>
+                </div>
+                
+                <div class="forgot-password">
+                    <a href="#">忘记密码?</a>
+                </div>
+                
+                <button class="btn btn-primary" id="login-btn">登录</button>
+                
+                <div class="social-login">
+                  <p>或使用以下方式登录</p>
+
+                  <div class="other-login">
+                    <img src="image/微博.webp" alt="" title="微博登录" >
+                    <span class="icon-text">微博登录</span>
+                    <img src="image/vx.jpg" alt=""  title="微信登录" >
+                    <span class="icon-text">微信登录</span>
+                    <img src="image/QQ.webp" alt="" title="QQ登录" >
+                    <span class="icon-text">QQ登录</span>
+                  </div>
+                </div>
+                
+                <div class="form-footer">
+                    还没有账号? <a href="Sign up.html" >立即注册</a>
+                </div>
+            </div>
+            <!-- 新增的手机验证码登录表单（默认隐藏） -->
+    <div class="form-content" id="phone-login-form" style="display:none;">
+        <div class="form-group">
+            <label for="phone-number">手机号码</label>
+            <input type="tel" id="phone-number" class="form-control" placeholder="请输入您的手机号">
+            <i class="fas fa-phone input-icon"></i>
+        </div>
+        
+        <div class="form-group">
+            <label for="verification-code">验证码</label>
+            <div style="display:flex; gap:10px;">
+                <input type="text" id="verification-code" class="form-control" placeholder="请输入验证码" style="flex:1;">
+                <button id="send-code-btn" class="btn" style="width:120px; background-color:#f0f0f0;">获取验证码</button>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary" id="phone-login-btn">登录</button>
+        
+        <div class="form-footer" style="margin-top:20px;">
+            <a href="#" id="back-to-login">返回账号密码登录</a>
+        </div>
+    </div>
+
+
+        </div>
+    </div>
+    
+    <!-- 自定义弹窗 -->
+    <div class="custom-popup" id="success-popup">
+        <div class="popup-content">
+            <div class="popup-icon">✓</div>
+            <h3 class="popup-title">登录成功</h3>
+            <p class="popup-message">您已成功登录系统，即将跳转到首页...</p>
+            <button class="popup-close" id="popup-close">确定</button>
+        </div>
+    </div>
+    
+<script>
+    // 获取登录按钮
+    const loginBtn = document.getElementById('login-btn');
+    // 获取弹窗元素
+    const successPopup = document.getElementById('success-popup');
+    // 获取关闭按钮
+    const popupClose = document.getElementById('popup-close');
+    const forgotPasswordLink = document.querySelector('.forgot-password a');
+    const phoneLoginForm = document.getElementById('phone-login-form');
+    const loginForm = document.getElementById('login-form');
+    const backToLoginLink = document.getElementById('back-to-login');
+    const sendCodeBtn = document.getElementById('send-code-btn');
+    const phoneLoginBtn = document.getElementById('phone-login-btn');
+    
+
+
+
+    // 忘记密码点击事件 - 切换到手机验证码登录
+    
+    forgotPasswordLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        loginForm.style.display = 'none';
+        phoneLoginForm.style.display = 'block';
+    });
+
+
+    // 返回账号密码登录
+
+    backToLoginLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        phoneLoginForm.style.display = 'none';
+        loginForm.style.display = 'block';
+    });
+
+
+    // 发送验证码按钮点击事件
+
+    sendCodeBtn.addEventListener('click', function() {
+    
+        const phoneNumber = document.getElementById('phone-number').value;
+
+        if(!phoneNumber || !/^1[3-9]\d{9}$/.test(phoneNumber)) {
+            alert('请输入正确的手机号码！');
+            return;
+    }
+    
+    // 禁用按钮，防止重复点击
+    this.disabled = true;
+    let countdown = 60;
+    this.textContent = `${countdown}秒后重试`;
+    
+    const timer = setInterval(() => {
+        countdown--;
+        this.textContent = `${countdown}秒后重试`;
+        
+        if(countdown <= 0) {
+            clearInterval(timer);
+            this.disabled = false;
+            this.textContent = '获取验证码';
+        }
+    }, 1000);
+    
+    // 这里应该是发送验证码的AJAX请求
+    // 模拟发送验证码
+    
+    console.log(`验证码已发送到手机号: ${phoneNumber}`);
+    alert(`验证码已发送到手机号: ${phoneNumber} `);
+
+});
+
+
+// 手机验证码登录按钮点击事件
+phoneLoginBtn.addEventListener('click', function() {
+    const phoneNumber = document.getElementById('phone-number').value;
+    const verificationCode = document.getElementById('verification-code').value;
+    
+    if(!phoneNumber || !/^1[3-9]\d{9}$/.test(phoneNumber)) {
+        alert('请输入正确的手机号码！');
+        return;
+    }
+    
+    if(!verificationCode || verificationCode.length !== 6) {
+        alert('请输入6位验证码！');
+        return;
+    }
+    
+    // 显示成功弹窗
+    successPopup.style.display = 'flex';
+    
+    // 3秒后自动跳转
+    setTimeout(function() {
+        window.location.href = 'index.html';
+    }, 3000);
+});
+
+
+    // 登录按钮点击事件
+    loginBtn.addEventListener('click', function() {
+        // 简单的表单验证
+        const username = document.getElementById('login-name').value;
+        const password = document.getElementById('login-password').value;
+        
+        if(username && password) {
+            // 显示成功弹窗
+            successPopup.style.display = 'flex';
+            
+            // 3秒后自动跳转到首页
+            setTimeout(function() {
+                window.location.href = 'index.html'; // 跳转到首页
+            }, 3000);
+        } else {
+            alert('请输入用户名和密码！');
+        }
+    });
+    
+    // 关闭弹窗并跳转到首页
+    popupClose.addEventListener('click', function() {
+        successPopup.style.display = 'none';
+        window.location.href = 'index.html'; // 立即跳转到首页
+    });
+    
+    // 点击弹窗外部关闭并跳转到首页
+    window.addEventListener('click', function(event) {
+        if(event.target === successPopup) {
+            successPopup.style.display = 'none';
+            window.location.href = 'index.html'; // 立即跳转到首页
+        }
+    });
+</script>
+</body>
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e
 </html>

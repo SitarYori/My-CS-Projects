@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+# Android Studio
+.gradle/
+.idea/
+*.iml
+
+# Build files
+build/
+*/build/
+
+# Local configuration
+local.properties
+
+# APK files
+*.apk
+*.aab
+
+# OS
+.DS_Store
+Thumbs.db
+=======
+=======
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e
 # Compiled class file
 *.class
 
@@ -22,3 +46,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+<<<<<<< HEAD
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e
+=======
+>>>>>>> 64b98629441b4b81bfb2bf12d3fa74438f1d4a8e
